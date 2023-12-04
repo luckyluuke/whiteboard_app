@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'whiteboard_features/whiteboard_advanced_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,25 +16,41 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Whiteboard App',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: InkWell(
+        onTap: (){
+          Navigator.push(
+              context,
+              WhiteboardPageAdvancedRoute(
+                  "whiteboardId",
+                  "whiteboardId",
+                  serverDestination: "192.1.56.10",
+                  userId: "user",
+                  helperId: "user13",
+                  callerAvatar: "/avatar_real.png",
+                  isNewUser: "false",
+                  pseudo: "user1",
+                  searchInput: "",
+                  enableAutoResearch: false,
+                  globalUserCountryCode: "FR",
+                  taskId: "task10",
+                  fullSpotPathOption:"2022.09.23",
+                  receiverIsHelper:  false
+              )
+          );
+        },
+        child: Text(
+            "Créer un nouveau tableau",
+            style: GoogleFonts.inter(
+              color: Colors.grey,
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
+            ),
+            textAlign:TextAlign.center
+        ),
+      )
     );
   }
 }
