@@ -1,6 +1,6 @@
 # whiteboard_app
 
-A new Flutter project.
+This is a whiteboard mobile app that allows multiple users to draw and share information in realtime.
 
 ## Getting Started
 
